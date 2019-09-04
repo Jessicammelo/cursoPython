@@ -5,6 +5,13 @@ Dinamico pode se colocar qualquer tipo de dado!
 #dinamico (não possui tamanho fixo)
 #qualquer tipo de dado (recebi qualquer tipo de dado)
 
+type([])
+lista1 = [1, 99, 4, 27, 15, 22, 3, 1, 44, 42, 27]
+lista2 = ['j', 'e', 's', 's', 'i', 'c', 'a']
+lista3 = []
+lista4 = list(range(11))
+lista5 = list('jessica')
+
 #listas são conchetes[]
 type([])
 lista1 = [1, 99, 4, 27, 15, 22, 3, 1, 44, 42, 27]
@@ -138,30 +145,87 @@ for elemento in lista1:
     soma = soma + elemento
 print(soma)
 
-"""
-type([])
-lista1 = [1, 99, 4, 27, 15, 22, 3, 1, 44, 42, 27]
-lista2 = ['j', 'e', 's', 's', 'i', 'c', 'a']
-lista3 = []
-lista4 = list(range(11))
-lista5 = list('jessica')
-
 #exemplo 2 (uzando while)
 carrinho = []
 produto = ''
 
 while produto != 'sair':
     print("Adicione um produto na lista ou digite 'sair' pra sair:")
-    produto = input( )
+    produto = input()
     if produto != 'sair':
-    carrinho.append(produto)
+        carrinho.append(produto)
 
-for produto in carrinho
+for produto in carrinho:
     print(produto)
 
+#utilizando variaveis  em listas
+numeros = [1, 2, 3, 4, 5]
+
+num1 = 1
+num2 = 2
+num3 = 3
+num4 = 4
+num5 = 5
+
+numeros = [num1, num2, num3, num4, num5]
+print(numeros)
+
+#fazemos acessos aos elementos de forma indexada
+#           0          1        2       3
+cores = ['verde', 'amarelo', 'azul', 'branco']
+
+print(cores[0]) #verde
+print(cores[1]) #amarelo
+print(cores[2]) #azul
+print(cores[3]) #branco
+
+# fazer acesso  aos elementos de forma indexada inversa
+# Para entender melhor o indice negativo, pense na lista como um circulo,
+# onde o final de um elemento está ligado ao inicio  da lista
+
+print(cores[-1]) #branco
+print(cores[-2]) #azul
+print(cores[-3]) #amarelo
+print(cores[-4]) #verde
+#print(cores[-5]) # Erro, pois não existe -5 de indice
+
+for cor in cores:
+    print(cor)
+
+indice = 0
+while indice < len(cores):
+    print(cores[indice])
+    indice = indice + 1
+
+#gerar indice em um for
+
+for indice, cor in enumerate(cores):
+    print(indice, cor)
 
 
+# Listas aceitam valores repetidos
+lista  = []
+lista.append(42)
+lista.append(42)
+lista.append(33)
+lista.append(33)
+lista.append(42)
+print(lista)
 
+
+"""
+
+#metodos não muito importantes mais tbm uteis
+#encontrar o indice  de um elemento na lista
+
+numeros = [5, 6, 7, 8, 9, 10]
+#Em qual indice  da lista esta o valor 6?
+print(numeros.index(6))
+
+#Em qual indice  da lista esta o valor 6?
+print(numeros.index(9))
+
+Obs: caso não tenho esse elemento na lista 
 
 
 

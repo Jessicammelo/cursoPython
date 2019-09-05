@@ -299,6 +299,39 @@ print(num2)
 print(num3)
 #se tivermos um numero diferente de elementos na lista ou variaveis para receber  os dados, teremos valueError
 
+
+#copiando uma lista para outra (Shallow Copy e Depp Copy)
+#Forma 1 Depp Copy
+
+lista = [1, 2, 3]
+print(lista)
+
+nova = lista.copy()
+print(nova)
+nova.append(4)
+print(lista)
+print(nova)
+
+#Veja que ao utilizarmos lista.copy() copiamos os dados da lista para uma nova lista, mais elas
+#ficaram totalmente independente, ou seja, modificando uma lista, não afeta a outra. Isso em Paython
+#é chamado de Depp copy (copia profunda).
+
+#Forma 2 - Shallow Copy
+
+lista = [1, 2, 3]
+print(lista)
+
+nova = lista
+print(nova)
+nova.append(4)
+print(lista)
+print(nova)
+
+#Veja que utilizamos a cópia via atribuição e copiamos os dados da lista para a nova lista, mas após realizar
+# modificação em uma das listas, essa modificação se repetiu em ambas as listaS.
+#iSSO em Python se chama Shallow Copy.
+
+
 """
 
 

@@ -76,6 +76,82 @@ print(mostra_informacao(nome='Estafane'))
 
 def diz_oi():
     print('oi')
+
+    #Exemplos
+def soma(num1, num2):
+    return num1 + num2
+
+def mat(num1, num2, fun=soma):
+    return fun(num1, num2)
+
+def subtracao(num1, num2):
+    return num1 - num2
+
+print(mat(2, 3))
+print(mat(2, 2, subtracao))
+
+#Escopo - Evitar problemas e confusoes
+
+#Variaveis globais
+#Variaveis locais
+
+instrutor = 'JESSICA' #variavel global
+
+def diz_oi():
+    instrutor = 'Python' #variavel local
+    return f'oi {instrutor}'
+
+print(diz_oi)
+
+#OBs:
+#Se tivermos uma variavel local com o mesmo nome de uma variavel global, o local terá preferencia
+
+def diz_oi():
+    professor = 'Jorge' #variavel local
+    return f'ola {professor}'
+
+print(diz_oi)
+print(professor) #NameError
+
+#atenção com variaveis globais ( Se puder evitar, evite!)
+
+total = 0
+
+def incrementa():
+    total = total + 1 #UnboudLocalError ( A variavel local está utilizada para processamento sem ter sido iniciada
+    return total
+
+print(encrementa())
+
+
+#atenção com variaveis globais ( Se puder evitar, evite!)
+total = 0
+
+def incrementa():
+    global total  #Avisamos que queremos utilizar a variavel global
+
+    total = total + 1
+    return total
+
+print(incrementa())
+print(incrementa())
+print(incrementa())
+
 """
 
+#Podemos ter funções que são declaradas dentro da funções, e tambem tem uma forma especial de escopo de variavel
 
+def fora():
+    contador = 0
+
+    def dentro():
+        nonlocal contador
+        contador = contador + 1
+        return contador
+    return dentro()
+
+print(fora())
+print(fora())
+print(fora())
+
+print(dentro()) #NameError
